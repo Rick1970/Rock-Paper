@@ -34,10 +34,27 @@ namespace RockPaper.Objects
     {
       _instances.Clear();
     }
+
     public static string Shoot(Player player1, Player player2)
     {
-      string output = null;
-      return output;
+      string output1 = "DRAW";
+      string output2 = "PLAYER 1 WINS";
+      // string output3 = "Player 2 wins!!";
+
+
+
+      if (player1.GetPlay() == player2.GetPlay())
+      {
+          return output1;
+      }
+      else if (((player1.GetPlay() == "Scissors") && (player2.GetPlay() == "Paper")) || ((player1.GetPlay() == "Rock") && (player2.GetPlay() == "Scissors")))
+      {
+        return output2;
+      }
+      else
+      {
+        return null;
+      }
     }
   }
 

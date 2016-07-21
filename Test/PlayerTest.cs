@@ -73,10 +73,31 @@ namespace RockPaper.Objects
     }
 
     [Fact]
-    public void Test_PlayAGame_true()
+    public void Test_PlayAGame_DRAW_true()
     {
       //Arrange
       Player player1 = new Player("Rock");
+      player1.Save();
+      Player player2 = new Player("Rock");
+      player2.Save();
+
+      //Act
+      //write a method to determine the winner
+      string result = Player.Shoot(player1, player2);
+      //Assert
+      Console.WriteLine(player1);
+      Console.WriteLine(player2);
+
+
+
+      Assert.Equal("DRAW", result);
+    }
+
+    [Fact]
+    public void Test_PlayAGame_SciBeatPap_true()
+    {
+      //Arrange
+      Player player1 = new Player("Scissors");
       player1.Save();
       Player player2 = new Player("Paper");
       player2.Save();
@@ -85,10 +106,55 @@ namespace RockPaper.Objects
       //write a method to determine the winner
       string result = Player.Shoot(player1, player2);
       //Assert
-      Assert.Equal("DRAW", result);
+      Console.WriteLine(player1);
+      Console.WriteLine(player2);
+
+
+
+      Assert.Equal("PLAYER 1 WINS", result);
     }
 
+    [Fact]
+    public void Test_PlayAGame_RocBeatSci_true()
+    {
+      //Arrange
+      Player player1 = new Player("Rock");
+      player1.Save();
+      Player player2 = new Player("Scissors");
+      player2.Save();
 
+      //Act
+      //write a method to determine the winner
+      string result = Player.Shoot(player1, player2);
+      //Assert
+      Console.WriteLine(player1);
+      Console.WriteLine(player2);
+
+
+
+      Assert.Equal("PLAYER 1 WINS", result);
+    }
+
+    // [Fact]
+    // public void Test_PlayAGame_PapBeatRoc_true()
+    // {
+    //   //Arrange
+    //   Player player1 = new Player("Paper");
+    //   player1.Save();
+    //   Player player2 = new Player("Rock");
+    //   player2.Save();
+    //
+    //   //Act
+    //   //write a method to determine the winner
+    //   string result = Player.Shoot(player1, player2);
+    //   //Assert
+    //   Console.WriteLine(player1);
+    //   Console.WriteLine(player2);
+    //
+    //
+    //
+    //   Assert.Equal("PLAYER 1 WINS", result);
+    // }
 
 
 

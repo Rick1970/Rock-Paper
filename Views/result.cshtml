@@ -1,10 +1,15 @@
-<h1>See results bleow</h1>
+<h1>See results below</h1>
+
+<ul>
+  @foreach(var pull in Model)
+  {
+    <li>Player 1 selected: @pull.GetPlay()</li>
+  
+  }
+</ul>
 
 
 
+<p><a href="/play1">Play Again!</a></p>
 
-
-
-<p><a href="/Play1">Play Again!</a></p>
-
-p><a href="/">Main Menu</a></p>
+<p><a href="/">Main Menu</a></p>

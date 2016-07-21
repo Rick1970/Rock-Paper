@@ -39,7 +39,7 @@ namespace RockPaper.Objects
     {
       string output1 = "DRAW";
       string output2 = "PLAYER 1 WINS";
-      // string output3 = "Player 2 wins!!";
+      string output3 = "PLAYER 2 WINS";
 
 
 
@@ -47,33 +47,14 @@ namespace RockPaper.Objects
       {
           return output1;
       }
-      else if (((player1.GetPlay() == "Scissors") && (player2.GetPlay() == "Paper")) || ((player1.GetPlay() == "Rock") && (player2.GetPlay() == "Scissors")))
+      else if (((player1.GetPlay() == "Scissors") && (player2.GetPlay() == "Paper")) || ((player1.GetPlay() == "Rock") && (player2.GetPlay() == "Scissors")) || ((player1.GetPlay() == "Paper") && (player2.GetPlay() == "Rock")))
       {
         return output2;
       }
       else
       {
-        return null;
+        return output3;
       }
     }
   }
-
-  // public class Game2
-  // {
-  //   private string _player2;
-  //   private static List<Game2> _instances = new List<Game2> {};
-  //
-  //   public Game2(string input2)
-  //   {
-  //     _player2 = input2;
-  //   }
-  //   public void SetPlayer2(string newInput2)
-  //   {
-  //     _player2 = newInput2;
-  //   }
-  //   public string GetPlayer2()
-  //   {
-  //     return _player2;
-  //   }
-  // }
-}
+}  
